@@ -1,0 +1,57 @@
+# config.yaml
+dataset_name: "crispr_l1000"
+chunk_size: 2048
+batch_size: 512
+num_workers: 4
+shuffle: true
+data_source: "obsm"
+obsm_key: "X_uce_4_layers"
+
+optimizer_name: "adamw"
+lr: 0.0001
+weight_decay: 1e-6
+scheduler_name: "warmup_cosine"
+min_lr: 0.0
+warmup_start_lr: 3e-5
+warmup_epochs: 10
+lr_decay_steps: [60, 80]
+scheduler_interval: "step"
+seed: 42
+label_key: "gene_name"
+batch_key: "dataset_batch_num"
+control_label: "true"
+eval_method: "reconstruct"
+
+k_initial: 251
+use_pca: true
+distance_fx: "euclidean"
+
+model_depth: 3
+control_key: "is_control"
+
+max_epochs: 30
+gpus: [0]
+accelerator: "gpu"
+precision: 32
+distributed_backend: "ddp"
+
+checkpoint_dir: "checkpoints"
+checkpoint_monitor: "val_loss"
+checkpoint_save_top_k: 1
+checkpoint_mode: "min"
+
+log_dir: "logs"
+log_every_n_steps: 50
+
+early_stop_monitor: "val_loss"
+early_stop_patience: 10
+early_stop_mode: "min"
+
+bmdb_path: "./datasets/eval/crispr_l1000.h5ad"
+recall_threshold : 0.05
+bmdb_pert_col: "gene_name"
+bmdb_ctrl_col: "is_control"
+
+
+wandb_project_name: "tx_l1000_baselines_unimodality"
+wandb_entity: "valencelabs"

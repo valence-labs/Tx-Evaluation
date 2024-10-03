@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "biomodalities"
+version = "0.1.0"
+description = "Unified codebase to explore encoding different biomodalities in different ways unimodally or multimodally"
+authors = ["IhabBendidi <ihabnobendidi@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+opencv-python = "^4.9.0.80"
+tifffile = "^2024.4.24"
+pandas = "^2.2.2"
+scikit-learn = "^1.4.2"
+h5py = "^3.11.0"
+tqdm = "^4.66.4"
+torchmetrics = "^1.4.0.post0"
+pytorch-lightning = "2.0.8"
+pyyaml = "^6.0.1"
+wandb = "^0.17.0"
+matplotlib = "^3.9.0"
+umap-learn = "^0.5.6"
+seaborn = "^0.13.2"
+scanpy = "^1.10.2"
+pytz = "^2024.1"
+anndata = "^0.10.8"
+scvi-tools = "^1.1.5"
+geomloss = "^0.2.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
