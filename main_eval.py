@@ -73,7 +73,7 @@ def main():
         simulate_perfect_recall = False
         
         
-        adata = adata[adata.obs[args.bmdb_ctrl_col] != True]
+        adata = adata[adata.obs[args.bmdb_ctrl_col] != args.control_label]
         metadata = adata.obs
         
         if args.obsm_key == "random" :
