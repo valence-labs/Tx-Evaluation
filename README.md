@@ -1,8 +1,13 @@
+# Benchmarking code for Benchmarking Transcriptomics Foundation Models for Perturbation Analysis
+
+Associated paper link : [Benchmarking Transcriptomics Foundation Models for Perturbation Analysis : one PCA still rules them all](https://arxiv.org/abs/2410.13956)
+
+## Usage
+
 ### Installation
 
 This code is currently tested with Python 3.9 and 3.10. No other Python version have been tested yet.
 
-#### Pytorch Installation
 
 Current code is run with Pytorch 2.0.1 for CUDA 11.7. Other versions not tested yet.
 
@@ -21,7 +26,7 @@ Use `poetry install` on the root of repository.
 
 ### Quickstart
 
-### Download data
+#### Download data
 
 All datasets are available through the following links : [Part 1](https://zenodo.org/records/14037432), [Part 2](https://zenodo.org/records/14037465), [Part 3](https://zenodo.org/records/14039051)
 
@@ -137,4 +142,18 @@ If you use SLURM for job management, run from root :
 bash cfg/schedulers/submit_jobs.sh
 # OR 
 bash cfg/schedulers/submit_arrays.sh
+```
+
+
+## Cite the work :
+
+If this has been useful to you, cite us through :
+
+```bibtex
+@inproceedings{bendidi2024benchmarkingtranscriptomicsfoundationmodels,
+      title={Benchmarking Transcriptomics Foundation Models for Perturbation Analysis : one PCA still rules them all}, 
+      author={Ihab Bendidi and Shawn Whitfield and Kian Kenyon-Dean and Hanene Ben Yedder and Yassir El Mesbahi and Emmanuel Noutahi and Alisandra K. Denton},
+      year={2024},
+      booktitle={NeurIPS AIDrugX Workshop}, 
+}
 ```
