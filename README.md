@@ -16,10 +16,32 @@ pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2
 
 Except for pytorch, please install all dependencies using poetry.
 
-Use `poetry install .` on the root of repository.
+Use `poetry install` on the root of repository.
 
 
 ### Quickstart
+
+### Download data
+
+All datasets are available through the following links : [Part 1](https://zenodo.org/records/14037432), [Part 2](https://zenodo.org/records/14037465), [Part 3](https://zenodo.org/records/14039051)
+
+`replogle_2022` dataset has been split into 3 parts, it would need to be merged first through the following python code :
+
+```python
+import anndata as ad
+
+# Read the three split AnnData files
+adata_part1 = ad.read_h5ad('replogle_2022_part1.h5ad')
+adata_part2 = ad.read_h5ad('replogle_2022_part2.h5ad')
+adata_part3 = ad.read_h5ad('replogle_2022_part3.h5ad')
+
+# Concatenate the AnnData objects in the original order
+adata_full = ad.concat([adata_part1, adata_part2, adata_part3], axis=0, join='outer')
+
+# Save the concatenated AnnData object
+adata_full.write_h5ad('replogle_2022.h5ad')
+```
+
 
 #### Prepare data
 
